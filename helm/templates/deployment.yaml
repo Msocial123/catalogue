@@ -24,6 +24,6 @@ spec:
         image: "muralisocial123/catalogue:{{ .Values.deployment.imageVersion }}"
         envFrom:
         - configMapRef:
-            name: catalogue-config
+            name: catalogue-config-example
         ports:
         - containerPort: 8080
