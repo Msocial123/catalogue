@@ -5,7 +5,7 @@ pipeline {
     }
 environment{
         AWS_ACCOUNT_ID="533267172375"
-        REGION="ap-southeast-2"
+        REGION="ap-south-1"
         REPO_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/catalogue"
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_REGISTRY_CREDENTIALS = 'docker-creds'
@@ -65,7 +65,7 @@ environment{
                 script{
                     withAWS(credentials: 'aws-auth', region: "${REGION}") {
                         sh """
-                        aws eks update-kubeconfig --region ${REGION} --name eks-cluster
+                        aws eks update-kubeconfig --region ${REGION} --name prod-cluster
                         cd helm
                         helm install catalogue . --set deployment.imageVersion=${VERSION}
                         """
