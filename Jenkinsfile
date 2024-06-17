@@ -8,7 +8,7 @@ environment{
         REGION="ap-southeast-1"
         REPO_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/catalogue"
         DOCKER_REGISTRY = 'docker.io'
-        DOCKER_REGISTRY_CREDENTIALS = 'docker-cred'
+        DOCKER_REGISTRY_CREDENTIALS = 'docker-creds'
     }
   stages {
     stage('Clone') {
