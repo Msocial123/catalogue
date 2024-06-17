@@ -5,10 +5,10 @@ pipeline {
     }
 environment{
         AWS_ACCOUNT_ID="590183897030"
-        REGION="ap-south-1"
+        REGION="ap-southeast-1"
         REPO_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/catalogue"
         DOCKER_REGISTRY = 'docker.io'
-        DOCKER_REGISTRY_CREDENTIALS = 'docker-creds'
+        DOCKER_REGISTRY_CREDENTIALS = 'docker-cred'
     }
   stages {
     stage('Clone') {
